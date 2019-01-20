@@ -1,0 +1,64 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	padding-top: 70px;
+	background: #eee;
+}
+
+.navbar {
+	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+.navbar .navbar-brand {
+	font-weight: bold;
+	letter-spacing: -1px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.navbar-right {
+	margin-right: 0;
+}
+
+.nav.navbar-nav li a{
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.table tbody>tr>td.middle {
+	vertical-align: middle;
+}
+
+.media {
+	padding: 10px 0;
+}
+
+.media img, .fileinput .thumbnail, .thumbnail img {
+	border-radius: 50%;
+}
+
+.media-left {
+	padding: 0 20px;
+}
+
+.media-heading {
+	color: #dd5638;
+	margin-bottom: 10px;
+}
+
+.media-body {
+	padding-top: 15px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}

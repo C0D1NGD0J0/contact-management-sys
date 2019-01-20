@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'contacts/index'
-  root 'contacts#index'
+  get 'contacts/index', to: 'contacts#index', as: "contacts"
+  root to: 'home#index'
 end
