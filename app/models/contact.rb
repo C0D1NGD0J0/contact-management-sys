@@ -1,6 +1,7 @@
 class Contact < ApplicationRecord
   belongs_to :group
-
+  paginates_per 7
+  
   def get_avatar
 		hash = Digest::MD5.hexdigest(email.downcase)
 		"https://www.gravatar.com/avatar/#{hash}"
