@@ -15,6 +15,11 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'Contacts', contacts_path %></li>
+        <li>
+          <%= link_to new_contact_path, class: 'btn' do %>
+            <i class="glyphicon glyphicon-plus"></i> Add Contact
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
