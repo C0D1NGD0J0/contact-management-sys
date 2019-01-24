@@ -22,6 +22,21 @@ class ContactsController < ApplicationController
   	end
   end
 
+  def edit
+  	@contact = Contact.find(params[:id])
+  end
+
+  def update
+  	@contact = Contact.find(params[:id])
+  	if @contact.update(contact_params)
+  		flash[:success] = "Contact has been updated..."
+  		redirect_to contacts_path
+  	else
+  		flash.now[:danger] = "Oops!, something went wrong. Try again"
+  		render :edit
+  	end
+  end
+
   private
   	def contact_params
   		params.require(:contact).permit(:name, :email, :phone, :company, :address, :group_id)
