@@ -1,14 +1,14 @@
 class ContactsController < ApplicationController
   def index
   	if params[:group_id] && !params[:group_id].empty?
-  		@contacts = Contact.where(group_id: params[:group_id]).page(params[:page])
+  		@contacts = Contact.where(group_id: params[:group_id]).order(created_at: :desc).page(params[:page])
   	else
-  		@contacts = Contact.page(params[:page])
+  		@contacts = Contact.order(created_at: :desc).page(params[:page])
   	end
   end
 
   def new 
-  	
+  	@contact = Contact.new
   end
 
   def create
