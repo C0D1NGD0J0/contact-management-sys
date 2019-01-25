@@ -12,6 +12,14 @@
     </div>
     <!-- /.navbar-header -->
     <div class="collapse navbar-collapse" id="navbar">
+      <%= form_tag contacts_path, class: 'navbar-form navbar-left', role: "search", method: :get do %>
+        <button type="submit" style="background: transparent; border: none; color: #fff;">
+          <i class="glyphicon glyphicon-search"></i>
+        </button>
+        <div class="form-group">
+          <%= text_field_tag :query, params[:query], id: 'search-form', placeholder: "Search...", autocomplete: 'off' %>
+        </div>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'Contacts', contacts_path %></li>
