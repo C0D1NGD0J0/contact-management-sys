@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
 	before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def index
+  	session[:selected_group_id] = params[:group_id]
   	if params[:group_id] && !params[:group_id].empty?
   		@contacts = Contact.where(group_id: params[:group_id]).order(created_at: :desc).page(params[:page])
   	else
@@ -17,7 +18,7 @@ class ContactsController < ApplicationController
   	@contact = Contact.new(contact_params)
   	if @contact.save
   		flash[:success] = "Contact has been successfully added."
-  		redirect_to contacts_path
+  		redirect_to contacts_path(previous_query_String)
   	else
   		flash.now[:danger] = "Oops!, please try again."
   		render :new
@@ -50,5 +51,9 @@ class ContactsController < ApplicationController
 
   	def contact_params
   		params.require(:contact).permit(:name, :email, :phone, :company, :address, :group_id)
+  	end
+
+  	def previous_query_string
+  		session[:selected_group_id] ? { group_id: session[:selected_group_id] } : {}
   	end
 end
