@@ -42,7 +42,7 @@ class ContactsController < ApplicationController
 
   def autocomplete
     @contacts = Contact.search(params[:query]).order(created_at: :desc).page(params[:page])
-    render json: @contacts.map { |contact| {id: contact.id, value: contact.name} }
+    # render json: @contacts.map { |contact| {id: contact.id, value: contact.name} }
   end
 
   private

@@ -11,7 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
+//= require jquery-ui/core
+//= require jquery-ui/widget
+//= require jquery-ui/position
+//= require jquery-ui/widgets/menu
+//= require jquery-ui/widgets/autocomplete
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
@@ -24,6 +28,7 @@ $(function(){
 		minLength: 3,
 		select: function(e, ui){
 			$("#search-form").val(ui.item.value);
+			$(this).closest('form').submit();
 		}
 	});
 });
