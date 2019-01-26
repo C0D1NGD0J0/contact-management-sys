@@ -42,3 +42,10 @@
 #search-form:focus{
   width: 100%;
 }
+
+.ui-autocomplete{
+  position: relative;
+  cursor: default;
+  z-index: 9999 !important;
+  width: 2000px;
+}

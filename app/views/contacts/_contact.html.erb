@@ -21,7 +21,7 @@
         <i class="glyphicon glyphicon-edit"></i>
       <% end %>
 
-      <%= link_to delete_contact_path(contact), method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: 'Are you sure?' } do %>
+      <%= link_to contact_path(contact), method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: 'Are you sure?' } do %>
         <i class="glyphicon glyphicon-remove"></i>
       <% end %>
     </div>
