@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'contacts/index', to: 'contacts#index', as: "contacts"
   # get 'contacts/new', to: 'contacts#new', as: 'new_contact'
   # get 'contacts/:id/edit', to: 'contacts#edit', as: 'edit_contact'
