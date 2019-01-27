@@ -1,4 +1,4 @@
-<%= form_for(@contact, url: @contact.new_record? ? create_contact_path : update_contact_path(@contact)) do |f| %>
+<%= form_for(@contact, url: @contact.new_record? ? contacts_path : contact_path(@contact)) do |f| %>
   <div class="panel-body">
     <div class="form-horizontal">
       <div class="row">
@@ -56,7 +56,7 @@
               <div class="input-group">
                 <input type="text" name="contact[new_group]" id="new_group" class="form-control">
                 <span class="input-group-btn">
-                  <a href="#" class="btn btn-default">
+                  <a id="save-group-btn" href="#" class="btn btn-default">
                     <i class="glyphicon glyphicon-ok"></i>
                   </a>
                 </span>
