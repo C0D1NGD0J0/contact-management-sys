@@ -22,7 +22,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){
+$(document).on('turbolinks:load', function(){
 	$('#search-form').autocomplete({
 		source: "/contacts/autocomplete",
 		minLength: 3,
