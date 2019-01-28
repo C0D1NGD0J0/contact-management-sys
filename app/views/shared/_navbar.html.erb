@@ -12,22 +12,34 @@
     </div>
     <!-- /.navbar-header -->
     <div class="collapse navbar-collapse" id="navbar">
-      <%= form_tag contacts_path, class: 'navbar-form navbar-left', role: "search", method: :get do %>
-        <button type="submit" style="background: transparent; border: none; color: #fff;">
-          <i class="glyphicon glyphicon-search"></i>
-        </button>
-        <div class="form-group">
-          <%= text_field_tag :query, params[:query], id: 'search-form', placeholder: "Search...", autocomplete: 'off' %>
-        </div>
+      <% if user_signed_in? %>
+        <%= form_tag contacts_path, class: 'navbar-form navbar-left', role: "search", method: :get do %>
+          <button type="submit" style="background: transparent; border: none; color: #fff;">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+          <div class="form-group">
+            <%= text_field_tag :query, params[:query], id: 'search-form', placeholder: "Search...", autocomplete: 'off' %>
+          </div>
+        <% end %>
       <% end %>
+
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'Contacts', contacts_path %></li>
-        <li>
-          <%= link_to new_contact_path, class: 'btn' do %>
-            <i class="glyphicon glyphicon-plus"></i> Add Contact
-          <% end %>
-        </li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Contacts', contacts_path %></li>
+          <li>
+            <%= link_to new_contact_path, class: 'btn' do %>
+              <i class="glyphicon glyphicon-plus"></i> Add Contact
+            <% end %>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

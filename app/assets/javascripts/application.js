@@ -16,7 +16,7 @@
 //= require jquery-ui/position
 //= require jquery-ui/widgets/menu
 //= require jquery-ui/widgets/autocomplete
-//= require bootstrap-sprockets
+//= require bootstrap/dropdown
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
