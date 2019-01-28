@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+	before_action :authenticate_user!
+	
 	def create
 		@group = Group.new(group_params)
 		if @group.save
