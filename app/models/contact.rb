@@ -1,5 +1,7 @@
 class Contact < ApplicationRecord
   belongs_to :group
+  belongs_to :user
+  
   paginates_per 7
   
   validates :name, :email, :group_id, :phone, presence: true
