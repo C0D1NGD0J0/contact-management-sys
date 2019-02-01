@@ -23,9 +23,11 @@ class ContactsController < ApplicationController
   end
 
   def edit
+    authorize @contact
   end
 
   def update
+    authorize @contact
   	if @contact.update(contact_params)
   		flash[:success] = "Contact has been updated..."
   		redirect_to contacts_path
@@ -36,6 +38,7 @@ class ContactsController < ApplicationController
   end
 
   def destroy
+    authorize @contact
   	@contact.destroy
   	flash[:success] = "Contact has been deleted..."
   	redirect_to contacts_path
