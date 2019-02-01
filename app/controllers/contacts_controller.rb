@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
 
   def index
   	session[:selected_group_id] = params[:group_id]
-  	@contacts = Contact.by_group(params[:group_id]).search(params[:query]).order(created_at: :desc).page(params[:page])
+  	@contacts = current_user.contacts.by_group(params[:group_id]).search(params[:query]).order(created_at: :desc).page(params[:page])
   end
 
   def new 
@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-  	@contact = Contact.new(contact_params)
+  	@contact = current_user.contacts.build(contact_params)
   	if @contact.save
   		flash[:success] = "Contact has been successfully added."
   		redirect_to contacts_path(previous_query_String)
@@ -42,8 +42,7 @@ class ContactsController < ApplicationController
   end
 
   def autocomplete
-    @contacts = Contact.search(params[:query]).order(created_at: :desc).page(params[:page])
-    # render json: @contacts.map { |contact| {id: contact.id, value: contact.name} }
+    @contacts = current_user.contacts.search(params[:query]).order(created_at: :desc).page(params[:page])
   end
 
   private
