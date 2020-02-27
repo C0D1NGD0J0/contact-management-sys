@@ -33,7 +33,7 @@ gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'jquery-rails'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
-gem 'devise', '~> 4.5'
+gem 'devise', '~> 4.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
