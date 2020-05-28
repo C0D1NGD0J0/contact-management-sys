@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'faker', '~> 1.7', '>= 1.7.3'
 gem 'jquery-rails'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', '~> 1.2'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'devise', '~> 4.7'
 
